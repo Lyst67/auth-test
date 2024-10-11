@@ -21,7 +21,7 @@ export default function Home() {
       setUserData(WebApp.initDataUnsafe.user as UserData);
       console.log(userData);
     }
-  }, [userData]);
+  }, []);
 
   return (
     <main className="p-5">
