@@ -1,7 +1,7 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import { AuthDataValidator } from "@telegram-auth/server";
 import { objectToAuthDataMap } from "@telegram-auth/server/utils";
-import { NextAuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 
 export type User = {
   id: string;
@@ -15,7 +15,7 @@ declare module "next-auth" {
   }
 }
 
-export const authOptions: NextAuthOptions = {
+export const authOptions = {
   providers: [
     CredentialsProvider({
       id: "telegram-login",
@@ -42,3 +42,4 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
 };
+export default NextAuth(authOptions);
