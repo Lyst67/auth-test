@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import { navPages } from "../lib/navPages";
 import NavLinks from "./navLinks";
 import UserSignPart from "./userSignPart";
-import { User } from "next-auth";
+import { User } from "../lib/auth";
 
 export default function Header() {
   const { data: session, status } = useSession();

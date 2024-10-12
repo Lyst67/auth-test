@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { User } from "../api/auth/[...nextauth]/route";
-
 import LogOut from "./logOut";
 import SignButton from "./signButton";
+import { User } from "../lib/auth";
 
 type Props = {
   user:
