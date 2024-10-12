@@ -5,7 +5,7 @@ import { navPages } from "../lib/navPages";
 import NavLinks from "./navLinks";
 // import SignButton from "./signButton";
 import UserSignPart from "./userSignPart";
-import { User } from "../api/auth/[...nextauth]/route";
+import { User } from "next-auth";
 
 export default function Header() {
   const { data: session, status } = useSession();

@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { User } from "./api/auth/[...nextauth]/route";
 import { useSession } from "next-auth/react";
+import { User } from "next-auth";
 
 // interface UserData {
 //   id: number;
