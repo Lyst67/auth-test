@@ -1,12 +1,12 @@
 // import { getLogOut } from "@/actions/login";
-import SignButton from "./signButton";
+import Button from "./button";
 
 export default function LogOut() {
   return (
     <form
     // action={getLogOut}
     >
-      <SignButton type="submit">Log Out</SignButton>
+      <Button type="submit">Log Out</Button>
     </form>
   );
 }
