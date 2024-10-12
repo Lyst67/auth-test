@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import AuthProvider from "./auth-provider";
 import "./globals.css";
-import Script from "next/script";
+import Header from "./components/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,14 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <Script
-          src="https://telegram-org/js/telegram-web-app.js"
-          strategy="beforeInteractive"
-        />
-      </head>
-      <body className={inter.className}>{children}</body>
-    </html>
+    <AuthProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <Header />
+          <main>{children}</main>
+        </body>
+      </html>
+    </AuthProvider>
   );
 }
