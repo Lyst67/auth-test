@@ -1,7 +1,7 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import { AuthDataValidator } from "@telegram-auth/server";
 import { objectToAuthDataMap } from "@telegram-auth/server/utils";
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 
 export type User = {
   id: string;
@@ -15,7 +15,7 @@ declare module "next-auth" {
   }
 }
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       id: "telegram-login",
@@ -28,9 +28,8 @@ export const authOptions = {
 
         const data = objectToAuthDataMap(req.query || {});
         const user = await validator.validate(data);
-        console.log(user);
+
         if (user.id && user.first_name) {
-          console.log(user.first_name);
           return {
             id: user.id.toString(),
             name: [user.first_name, user.last_name || ""].join(" "),
