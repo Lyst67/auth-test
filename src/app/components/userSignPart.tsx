@@ -16,12 +16,7 @@ export default function UserSignPart({ user }: Props) {
       {!user ? (
         <div className="flex gap-1 lg:flex-col xl:flex-row xl:gap-2">
           <Link href={"?login=true"}>
-            <SignButton
-              type="button"
-              // botUsername={`${process.env.BOT_USERNAME}`}
-            >
-              Log In
-            </SignButton>
+            <SignButton type="button">Log In</SignButton>
           </Link>
         </div>
       ) : (
