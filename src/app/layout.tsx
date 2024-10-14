@@ -24,7 +24,9 @@ export default function RootLayout({
           src="https://telegram.org/js/telegram-widget.js?22"
           data-telegram-login="MHLoginBot"
           data-size="large"
-          data-auth-url="https://telegram-auth-rho.vercel.app/"
+          data-radius="20"
+          data-auth-url="https://telegram-auth-rho.vercel.app/user"
+          data-request-access="write"
         ></script>
       </head>
       <AuthProvider>
