@@ -28,7 +28,7 @@ export const authOptions: NextAuthOptions = {
 
         const data = objectToAuthDataMap(req.query || {});
         const user = await validator.validate(data);
-        console.log(data);
+
         if (user.id && user.first_name) {
           return {
             id: user.id.toString(),
