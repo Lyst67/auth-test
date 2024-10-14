@@ -2,13 +2,10 @@ import Image from "next/image";
 import LogOut from "./logOut";
 import SignButton from "./signButton";
 import { User } from "../lib/auth";
+import Link from "next/link";
 
 type Props = {
-  user:
-    | ({
-        role?: string | undefined | null;
-      } & User)
-    | undefined;
+  user: User;
 };
 
 export default function UserSignPart({ user }: Props) {
@@ -18,7 +15,14 @@ export default function UserSignPart({ user }: Props) {
     <>
       {!user ? (
         <div className="flex gap-1 lg:flex-col xl:flex-row xl:gap-2">
-          <SignButton botUsername={`${process.env.BOT_USERNAME}`}></SignButton>
+          <Link href={"?login=true"}>
+            <SignButton
+              type="button"
+              // botUsername={`${process.env.BOT_USERNAME}`}
+            >
+              Log In
+            </SignButton>
+          </Link>
         </div>
       ) : (
         <div className="flex flex-col gap-2">

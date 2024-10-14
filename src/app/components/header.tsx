@@ -5,6 +5,7 @@ import { navPages } from "../lib/navPages";
 import NavLinks from "./navLinks";
 import UserSignPart from "./userSignPart";
 import { User } from "../lib/auth";
+import LogInModal from "./logInModal";
 
 export default function Header() {
   const { data: session, status } = useSession();
@@ -33,6 +34,7 @@ export default function Header() {
         <div className="flex gap-4 items-center">
           <UserSignPart user={user} />
         </div>
+        <LogInModal botUsername={`${process.env.BOT_USERNAME}`} />
       </div>
       <hr className=" border-solid border-transparent dark:border-slate-600" />
     </>

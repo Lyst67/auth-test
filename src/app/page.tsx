@@ -21,9 +21,9 @@ export default function Home() {
   useEffect(() => {
     if (user) {
       setUserData(user as User);
-      console.log(userData);
     }
-  }, [user, userData]);
+  }, [user]);
+  console.log(userData);
 
   if (status === "loading") {
     return (
@@ -52,7 +52,7 @@ export default function Home() {
           </ul>
         </>
       ) : (
-        <div>Loading....</div>
+        <div>No UserData</div>
       )}
     </>
   );
