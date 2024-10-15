@@ -18,22 +18,18 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <head>
-        <script
-          async
-          src="https://telegram.org/js/telegram-widget.js?22"
-          data-telegram-login="MHLoginBot"
-          data-size="large"
-          data-radius="20"
-          data-auth-url="https://telegram-auth-rho.vercel.app/user"
-          data-request-access="write"
-        ></script>
-      </head>
       <AuthProvider>
         <html lang="en">
           <body className={inter.className}>
             <Header />
             <main>{children}</main>
+            <script
+              async
+              src="https://telegram.org/js/telegram-widget.js?22"
+              data-telegram-login="MHLoginBot"
+              data-size="large"
+              data-auth-url="https://telegram-auth-rho.vercel.app/"
+            ></script>
           </body>
         </html>
       </AuthProvider>
