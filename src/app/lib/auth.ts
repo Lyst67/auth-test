@@ -18,8 +18,8 @@ declare module "next-auth" {
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
-      id: "telegram-login",
-      name: "Telegram Login",
+      id: "MHLoginBot",
+      name: "MHLoginBot",
       credentials: {},
       async authorize(credentials, req) {
         const validator = new AuthDataValidator({
