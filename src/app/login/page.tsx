@@ -20,7 +20,7 @@ export default function TelegramAccountButton() {
           botUsername={`${process.env.BOT_USERNAME}`}
           onAuthCallback={(data) => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            signIn("telegram-login", { callbackUrl: "/" }, data as any);
+            signIn("MHLoginBot", { callbackUrl: "/" }, data as any);
           }}
         />
       </div>
