@@ -1,5 +1,5 @@
 import CredentialsProvider from "next-auth/providers/credentials";
-import NextAuth, { NextAuthOptions } from "next-auth";
+import { NextAuthOptions } from "next-auth";
 import { objectToAuthDataMap, AuthDataValidator } from "@telegram-auth/server";
 import { createUserOrUpdate } from "./prisma";
 
@@ -51,8 +51,7 @@ export const authOptions: NextAuthOptions = {
 		}),
 	],
 	callbacks: {
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		async session({ session, user, token }) {
+		async session({ session }) {
 			session.user.id = session.user.email;
 			return session;
 		},
@@ -62,5 +61,3 @@ export const authOptions: NextAuthOptions = {
 		error: "/auth/error",
 	},
 };
-
-export default NextAuth(authOptions);
